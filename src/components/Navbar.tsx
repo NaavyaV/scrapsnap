@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 import { useAuth } from '../contexts/AuthContext';
@@ -28,16 +28,23 @@ export default function Navbar() {
                 <div className="flex flex-shrink-0 items-center">
                   <Link to="/" className="text-2xl font-bold text-green-600">ScrapSnap</Link>
                 </div>
-                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <div className="hidden sm:ml-12 sm:flex sm:space-x-12">
                   {navigation.map((item) => (
                     (!item.private || currentUser) && (
-                      <Link
+                      <NavLink
                         key={item.name}
                         to={item.href}
-                        className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900"
+                        className={({ isActive }) =>
+                          classNames(
+                            isActive
+                              ? 'border-green-500 text-green-600'
+                              : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
+                            'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors duration-200'
+                          )
+                        }
                       >
                         {item.name}
-                      </Link>
+                      </NavLink>
                     )
                   ))}
                 </div>
@@ -131,16 +138,23 @@ export default function Navbar() {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 pb-3 pt-2">
+            <div className="space-y-2 pb-3 pt-2">
               {navigation.map((item) => (
                 (!item.private || currentUser) && (
-                  <Link
+                  <NavLink
                     key={item.name}
                     to={item.href}
-                    className="block py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                    className={({ isActive }) =>
+                      classNames(
+                        isActive
+                          ? 'bg-green-50 border-l-4 border-green-500 text-green-600'
+                          : 'border-l-4 border-transparent text-gray-500 hover:bg-gray-50 hover:text-gray-700',
+                        'block py-2 pl-3 pr-4 text-base font-medium transition-colors duration-200'
+                      )
+                    }
                   >
                     {item.name}
-                  </Link>
+                  </NavLink>
                 )
               ))}
             </div>
