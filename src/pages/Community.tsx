@@ -296,7 +296,7 @@ export default function Community() {
                     id="post"
                     name="post"
                     rows={3}
-                    className="block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
+                    className="block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm p-3"
                     placeholder="Share your recycling tip or experience..."
                     value={newPost}
                     onChange={(e) => setNewPost(e.target.value)}
