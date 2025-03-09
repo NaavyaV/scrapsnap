@@ -17,9 +17,10 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <div className="min-h-screen bg-gray-100">
+        <div className="flex flex-col h-screen overflow-hidden">
           <Navbar />
-          <Routes>
+          <main className="flex-1 h-[calc(100vh-4rem)] overflow-auto">
+            <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
@@ -54,7 +55,8 @@ function App() {
                 <MyItems />
               </PrivateRoute>
             } />
-          </Routes>
+            </Routes>
+          </main>
         </div>
       </AuthProvider>
     </Router>

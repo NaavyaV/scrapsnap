@@ -17,9 +17,9 @@ export default function Landing() {
   }, [navigate]);
 
   return (
-    <div className="bg-white">
-      <div className="relative isolate px-6 pt-4 lg:px-8 bg-gradient-to-r from-green-100 to-white">
-        <div className="mx-auto max-w-2xl py-12 sm:py-20 lg:py-24">
+    <div className="h-full bg-white">
+      <div className="relative isolate px-6 h-full lg:px-8 bg-gradient-to-r from-green-100 to-white flex flex-col justify-center">
+        <div className="mx-auto max-w-2xl py-8 sm:py-12 lg:py-16">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               Snap it, scrap it, save the Earth.
@@ -39,7 +39,7 @@ export default function Landing() {
                 View leaderboard <span aria-hidden="true">→</span>
               </Link>
             </div>
-            <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               <div className="text-center">
                 <div className="rounded-lg border-4 border-transparent bg-white p-6 bg-clip-padding border-gradient-to-r from-green-100 to-white">
                   <h3 className="text-base font-semibold leading-7 text-gray-900">Upload & Analyze</h3>

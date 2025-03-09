@@ -25,16 +25,14 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-green-100 via-white to-green-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-col items-center justify-center min-h-[calc(100vh-6rem)]">
-          <div className="w-full max-w-sm">
-        <h2 className="text-center text-3xl font-bold leading-9 tracking-tight text-gray-900 drop-shadow-sm">
-          Sign in to your account
-        </h2>
-          </div>
+    <div className="h-full flex items-center justify-center bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-green-100 via-white to-green-50">
+      <div className="mx-auto max-w-md px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+        <div className="w-full max-w-sm space-y-6">
+          <h2 className="text-center text-3xl font-bold leading-9 tracking-tight text-gray-900 drop-shadow-sm">
+            Sign in to your account
+          </h2>
 
-          <div className="mt-6 w-full max-w-sm">
+          <div className="w-full">
         {error && (
           <div className="mb-4 bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded relative" role="alert">
             {error}
